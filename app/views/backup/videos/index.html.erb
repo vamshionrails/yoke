@@ -1,0 +1,10 @@
+
+<h2>Videos (<%#= link_to 'Create new', new_video_path %>)</h2>
+
+<ul>
+<% for video in @videos %>
+<li><%= video.id %> <%#= video.video.url %> <%#= link_to 'view', video_path(video) %></li>
+<% end %>
+</ul>
+
+

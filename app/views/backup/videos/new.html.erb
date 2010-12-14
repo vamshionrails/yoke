@@ -1,0 +1,11 @@
+# new view
+<% form_for(@video, :html => {:multipart => true, :class => 'styledform' }) do |f| %>
+<%= f.error_messages %>
+<p>
+<%= f.label :video %><br />
+<%= f.file_field :video %>
+</p>
+<p>
+<%= f.submit %> or <%= link_to 'Cancel', videos_path %>
+</p>
+<% end %>

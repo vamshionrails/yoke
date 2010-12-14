@@ -1,0 +1,6 @@
+[ Dec 14 14:01:10] error    : monit: please specify the configured service name or 'all' after start
+[ Dec 14 14:02:08] error    : monit: please specify the configured service name or 'all' after start
+[ Dec 14 14:02:10] info     : Starting monit daemon with http interface at [*:2812]
+[ Dec 14 14:02:10] info     : Starting monit HTTP server at [*:2812]
+[ Dec 14 14:02:10] info     : monit HTTP server started
+[ Dec 14 14:02:10] info     : 'system_vamshionrails' Monit started

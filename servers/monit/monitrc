@@ -1,0 +1,13 @@
+set daemon  60
+set logfile /Users/vamshi/ROR/personal/trendy/log/monit.log
+set mailserver localhost
+set alert change@me.net
+
+set httpd port 2812 and
+     allow admin:monit
+
+check process delayed_job
+  with pidfile /home/sysadmin/app/current/shared/pids/delayed_job.pid
+  start program = "/usr/bin/env RAILS_ENV=production /home/sysadmin/app/current/script/delayed_job start"
+  stop program = "/usr/bin/env RAILS_ENV=production /home/sysadmin/app/current/script/delayed_job stop"
+

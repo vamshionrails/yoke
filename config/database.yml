@@ -1,0 +1,17 @@
+login: &login
+  adapter: mysql
+  username: root
+  password: root
+  host: localhost
+
+development:
+  <<: *login
+  database: trendy_dev
+
+test:
+  <<: *login
+  database: trendy_test
+
+production:
+  <<: *login
+  database: trendy_prod

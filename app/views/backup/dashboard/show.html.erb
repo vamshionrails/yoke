@@ -1,0 +1,22 @@
+<% @title = "Dashboard" %>
+<h4><%=@title%></h4>
+Welcome :<%= @user.login %>
+<%=link_to "Update your account details", myaccount_path(@user)%>
+
+
+<% if current_user.admin? %>
+  <h2>Admin links</h2>
+  <ul>
+    <li><%=link_to "Manage users", admin_users_url %></li>
+  </ul>
+<% end %>
+
+<br>
+
+<%= pluralize User.logged_in.count, "user" %> currently logged in<br />
+
+
+<br>
+<h4> VIDEOS </H4>
+
+

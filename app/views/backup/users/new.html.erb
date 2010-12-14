@@ -1,0 +1,26 @@
+<h4><%= I18n.t 'usr.signupna' %></h4>
+
+
+<p><%= I18n.t 'usr.signuptip' %></p>
+<h3><%= I18n.t 'usr.tip' %></h3> 
+<p><%= I18n.t 'usr.tiptext' %> </p>
+
+
+<% form_for @user do |f| %>
+  <%= f.error_messages %>
+  <div id="row">
+    <%=I18n.t 'usr.login' %>
+    <br/>
+    <%= f.text_field :login %>
+  </div>
+  <div id="row">
+    <%=I18n.t 'usr.email' %>
+    <br />
+    <%= f.text_field :email %>
+  </div>
+  <div id="row">
+    <%= submit_tag I18n.t "usr.signup" , :class => "submit"  %>
+  </div>
+<% end %>
+  
+  
