@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
 
   def show
     @user = current_user
-    @videos = @user.videos
+    #@videos = @user.videos
   end
 
 end

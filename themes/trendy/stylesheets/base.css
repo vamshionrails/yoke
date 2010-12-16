@@ -1,0 +1,594 @@
+ 
+* {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+.clear {
+    clear: both;
+    height: 0;
+}
+.wat-cf:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.wat-cf {
+    display: inline-block;
+}
+* html .wat-cf {
+    height: 1%;
+}
+.wat-cf {
+    display: block;
+}
+h1 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15px;
+}
+h2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15px;
+}
+h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+}
+h4 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+}
+hr {
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+    height: 1px;
+}
+p {
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15px;
+}
+a img {
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+}
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+#container {
+    min-width: 960px;
+}
+#header, #wrapper {
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+}
+#header {
+    padding-top: 1px;
+    position: relative;
+}
+#header h1 {
+    font-size: 26px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+}
+#header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
+    text-decoration: none;
+}
+#main {
+    float: left;
+    width: 70%;
+}
+.actions-bar {
+    padding-bottom: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 10px;
+}
+.actions-bar .actions {
+    float: left;
+}
+.actions-bar .pagination {
+    float: right;
+    padding-bottom: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+}
+#sidebar {
+    float: right;
+    width: 25%;
+}
+#sidebar h3 {
+    font-size: 13px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+#sidebar .block {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+#sidebar .block .content {
+    padding-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0;
+}
+#sidebar ul.navigation li a:link, #sidebar ul.navigation li a:visited {
+    display: block;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+#sidebar .block .sidebar-block, #sidebar .notice {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+#wrapper {
+    padding-top: 20px;
+}
+#main .block {
+    margin-bottom: 20px;
+    padding-top: 1px;
+}
+#main .block .content .inner {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0;
+}
+#main .main p.first {
+    margin-top: 0;
+}
+#user-navigation {
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+#main-navigation {
+    width: 100%;
+}
+#user-navigation ul, #main-navigation ul, .secondary-navigation ul, #sidebar ul.navigation {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+#user-navigation ul li, #main-navigation ul li, .secondary-navigation ul li {
+    float: left;
+}
+#main-navigation ul li {
+    margin-right: 5px;
+}
+#user-navigation ul li {
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+#main-navigation ul li a:link, #main-navigation ul li a:visited, #main-navigation ul li a:hover, #main-navigation ul li a:active, .secondary-navigation ul li a:link, .secondary-navigation ul li a:visited, .secondary-navigation ul li a:hover, .secondary-navigation ul li a:active, #user-navigation ul li a:link, #user-navigation ul li a:visited, #user-navigation ul li a:hover, #user-navigation ul li a:active {
+    text-decoration: none;
+}
+#main-navigation ul li a {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+}
+.secondary-navigation {
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+    font-size: 13px;
+}
+.secondary-navigation ul li a {
+    display: block;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+#footer {
+    padding-bottom: 20px;
+}
+.pagination a, .pagination span, .pagination em {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+}
+.pagination em {
+    font-weight: bold;
+}
+.pagination a {
+    text-decoration: none;
+}
+.table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.table th {
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: left;
+}
+.table th.first {
+    width: 30px;
+}
+.table th.last {
+    width: 200px;
+}
+.table .checkbox {
+    margin-left: 10px;
+}
+.table td {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.table td.last {
+    text-align: right;
+}
+input.checkbox {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+.form .group {
+    margin-bottom: 15px;
+}
+.form div.left {
+    float: left;
+    width: 20%;
+}
+.form div.right {
+    float: right;
+    width: 75%;
+}
+.form .columns .column {
+    width: 48%;
+}
+.form .columns .left {
+    float: left;
+}
+.form .columns .right {
+    float: right;
+}
+.form label.label, .form input.text_field, .form textarea.text_area {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+}
+.form label.right {
+    text-align: right;
+}
+.form input.checkbox, .form input.radio {
+    margin-right: 5px;
+}
+.form label.checkbox, .form label.radio {
+    line-height: 1.5em;
+}
+.form label.label {
+    display: block;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+.form div.fieldWithErrors label.label {
+    display: inline;
+}
+.form .fieldWithErrors .error {
+    color: red;
+}
+.form input.text_field, .form textarea.text_area {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    width: 100%;
+}
+ul.list {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+ul.list li {
+    clear: left;
+    padding-bottom: 5px;
+}
+ul.list li .left {
+    float: left;
+}
+ul.list li .left .avatar {
+    height: 50px;
+    width: 50px;
+}
+ul.list li .item {
+    margin-left: 80px;
+}
+ul.list li .item .avatar {
+    float: left;
+    height: 30px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px;
+    margin-top: 0;
+    width: 30px;
+}
+#box {
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 500px;
+}
+#box .block {
+    margin-bottom: 20px;
+}
+#box .block h2 {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+#box .block .content {
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+a.button:link, a.button:visited, a.button:hover, a.button:active, button.button {
+    background-color: #EEEEEE;
+    border-bottom-color: #BFBFBF;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #BFBFBF;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #BFBFBF;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-color: #BFBFBF;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #222222;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 7px;
+    margin-top: 0;
+    padding-bottom: 6px;
+    padding-left: 7px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+button.button {
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 10px;
+    padding-top: 4px;
+    width: auto;
+}
+button.button[type] {
+    line-height: 17px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+:first-child + html button.button[type] {
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 10px;
+    padding-top: 4px;
+}
+button.button img, a.button img {
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+    height: 16px;
+    margin-bottom: -3px !important;
+    margin-left: 0 !important;
+    margin-right: 3px !important;
+    margin-top: 0 !important;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    width: 16px;
+}
+button.button:hover, a.button:hover {
+    background-color: #DEDEDE;
+}
+button.button:active, a.button:active {
+    background-color: #E5E5E5;
+}

@@ -34,5 +34,4 @@ class Notifier < ActionMailer::Base
     body          :root_url => root_url
   end
 
-
 end

@@ -1,8 +1,9 @@
 class Admin::UsersController < ApplicationController
+  theme ADMIN_THEME
   before_filter :require_user
   before_filter :admin_only
   before_filter :find_user, :except =>[:index, :new, :create]
-  
+
   def index
     @users = User.active( :order => "created_at desc" )
     respond_to do |format|
@@ -10,29 +11,29 @@ class Admin::UsersController < ApplicationController
       format.xml {render :xml=>@users.to_xml}
     end
   end
-  
+
   def show
     respond_to do |format|
       format.html
       format.xml {render :xml=>@user.to_xml}
     end
   end
-  
+
   def new
     @user = User.new
   end
-  
-  
+
+
   def make_admin
     @user.make_admin
     redirect_to admin_users_path
   end
-  
+
   def remove_admin
     @user.remove_admin
     redirect_to admin_users_path
   end
-  
+
   def create
     @user = User.new(params[:user])
     @user.active = true
@@ -43,11 +44,11 @@ class Admin::UsersController < ApplicationController
       render :action => :new
     end
   end
-  
+
   def edit
     render :action => "edit"
   end
-  
+
   def update
     if @user.update_attributes(params[:user])
         flash[:notice] = "The account has been updated."
@@ -56,10 +57,10 @@ class Admin::UsersController < ApplicationController
       render :action => "edit"
     end
   end
-  
+
   private
   def find_user
     @user = User.find(params[:id])
   end
-  
+
 end

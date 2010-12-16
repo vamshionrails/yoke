@@ -1,22 +1,19 @@
 #=User
-# A user can take on many roles depending on the circumstances.
 
 class User < ActiveRecord::Base
-
 
   acts_as_authentic do |user_model|
     user_model.validates_length_of_password_field_options = {:minimum => 6, :on => :update, :if => :has_no_credentials? }
   end
+
   # implement if necessary
   #has_one :profile, :dependent => :destroy
 
   has_many :user_roles, :dependent => :destroy
   has_many :roles, :through => :user_roles
-
   has_many :videos
   scope :active, :conditions => {:active => true}
   scope :inactive, :conditions => {:active => false}
-
 
   #delegate :name, :to => :profile
 
@@ -90,25 +87,26 @@ class User < ActiveRecord::Base
 
    # Email notifications
 
+# Email notifications
+
    # Resets the token and sends the password reset instructions via Notifier
    def deliver_password_reset_instructions!
-
      reset_perishable_token!
-     Notifier.send_later(:deliver_password_reset_instructions, self)
+     Notifier.deliver_password_reset_instructions(self)
    end
 
    # Resets the token and sends the activation instructions via Notifier
    def deliver_activation_instructions!
-    reset_perishable_token!
-    Notifier.send_later(:deliver_activation_instructions, self)
-    #Delayed::Job.enqueue Notifier.send_later(:deliver_activation_instructions,self), 0, 1.minutes.from_now
+     reset_perishable_token!
+     #Notifier.activation_instructions.deliver
+    Notifier.deliver_activation_instructions(self)
+    # Notifier.send_at(1.minutes.from_now, :deliver_activation_instructions, self)
    end
 
    # Resets the token and sends the activation confirmatio via Notifier
    def deliver_activation_confirmation!
      reset_perishable_token!
-     Notifier.send_later(:deliver_activation_instructions.self)
-
+     Notifier.deliver_activation_confirmation(self)
    end
 
    # Creates a blank profile, associates it with the user,

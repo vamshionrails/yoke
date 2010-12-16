@@ -3,19 +3,21 @@
   %head
     %title YOKE
     = stylesheet_link_tag current_theme_stylesheet_path('style')
+    = stylesheet_link_tag current_theme_stylesheet_path('base')
   %body
     #wrapper
       #header
-        %h1 Trendy 
-        %h2 tailoring project made!
+        %h1 
+        %h2 ......................
         - form_tag '' do
           = select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'})
       #nav
         %ol
           %a(href="/")
             %li 
-              = I18n.t 'menu.home'
-          %a(href="about")
+              =  'home'
+            %a=  'about'
+            = link_to "Jobs", admin_jobs_path
             %li Contact Us
             - if current_user
               = "Logged-in as #{current_user.email}"

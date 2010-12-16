@@ -1,0 +1,16 @@
+test
+<h1> JOBS</h1>
+
+<% @jobs.each do |job| %>
+<%= job.id %>
+<%= job.priority %>
+<%= job.attempts %>
+<%= job.handler %>
+<%= job.last_error %>
+<%= job.run_at %>
+<%= job.locked_at %>
+<%= job.failed_at %>
+<%= job.created_at %>
+<%%= job.updated_at %>
+
+<%end %>
