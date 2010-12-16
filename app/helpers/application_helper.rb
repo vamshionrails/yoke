@@ -12,5 +12,14 @@ module ApplicationHelper
     end
     output
   end
+  # content side bar
+  def content(size, &block)
+    @size = size.to_s and yield
+  end
+
+  def sidebar(&block)
+    content_for(:sidebar, content_tag(:div, capture(&block), :id => 'sideview'))
+  end
 
 end
+
