@@ -13,17 +13,22 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><a href="index.html">Yoke::Balancing social networking....</a></h1>
+      <h1><a href="/">Yoke::<%= I18n.t('txt.quote')%></a></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
-
 	  <% if current_user %>
-          <li><%= "Logged-in as #{current_user.login.capitalize}" %></li>
-          <li><%= link_to "My Account", edit_user_path(current_user) %></li>
-          <li><%= link_to "Logout", logout_path %></li>
+          <li><%= link_to I18n.t('txt.welcome') %>
+          <li><%= link_to I18n.t('user.myaccount'), edit_user_path(current_user) %></li>
+          <li><%= link_to I18n.t('user.logout'), logout_path %></li>
           <% else %>
-	  <li><%= link_to "Login", login_path %></li>
-	  <li><%= link_to "Sign Up", signup_path %></li>
+	  <li>
+	    <% form_tag '' do %>
+	    <%= select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'}) %>
+	    <% end %>
+	  </li>
+
+	  <li><%= link_to I18n.t('user.login'), login_path %></li>
+	  <li><%= link_to I18n.t('user.signup'), signup_path %></li>
           <%end %>
 
 	  
@@ -38,12 +43,7 @@
     <div id="wrapper" class="wat-cf">
       <div id="main">
         <div class="block" id="block-text">
-          <div class="secondary-navigation">
-            <ul class="wat-cf">
-              <li class="active first"><a href="/admin/users">Users</a></li>
-               <li class="first"><a href="/admin/index/jobs">Jobs</a></li>
-            </ul>
-          </div>
+          
           <div class="content">
             <div class="inner">
               <p class="first">
@@ -57,7 +57,8 @@
              
         <div id="footer">
           <div class="block">
-            <p>Copyright &copy; 2010 Your Site.</p>
+
+           <p><%= I18n.t('txt.copyright')%></p>
           </div>
         </div>
       </div>

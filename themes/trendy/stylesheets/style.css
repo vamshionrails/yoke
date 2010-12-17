@@ -55,7 +55,7 @@ hr {
     -moz-background-origin: padding;
     -moz-background-size: auto auto;
     background-attachment: scroll;
-    background-color: #002134;
+    background-color: #cccccc;
     background-image: none;
     background-position: 0 0;
     background-repeat: repeat;
@@ -78,7 +78,7 @@ hr {
     color: #FFFFFF;
 }
 #user-navigation {
-    bottom: 5px;
+    bottom: 25px;
     right: 25px;
     top: auto;
 }
@@ -120,7 +120,7 @@ hr {
     font-weight: bold;
     letter-spacing: -1px;
     line-height: 1.2em;
-    margin-left: 15px;
+    margin-left: 0px;
     text-transform: none;
 }
 #main .block .content p {
