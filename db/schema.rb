@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101110215550) do
+ActiveRecord::Schema.define(:version => 20101217191106) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20101110215550) do
   end
 
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "thumbnails", :force => true do |t|
+    t.string   "content_type"
+    t.integer  "size"
+    t.string   "filename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_roles", :force => true do |t|
     t.integer  "user_id"
@@ -63,15 +71,26 @@ ActiveRecord::Schema.define(:version => 20101110215550) do
     t.datetime "updated_at"
   end
 
+  create_table "video_replies", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.integer  "parent_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "videos", :force => true do |t|
-    t.string   "content_type"
-    t.integer  "size"
-    t.string   "filename"
     t.string   "title"
-    t.text     "description"
+    t.string   "description"
+    t.string   "source_content_type"
+    t.string   "source_file_name"
+    t.integer  "source_file_size"
     t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "thumbnail_id"
+    t.integer  "user_id"
   end
 
 end

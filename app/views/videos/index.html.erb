@@ -1,0 +1,16 @@
+
+<p><h2>Videos</h2></p><br />
+<%#= will_paginate @videos %>
+<div class = "video_container">
+  <%  @videos.each do |video| %>
+  <%= video.title %><br>
+  <a href = "<%= video_url(video) %>" class = "video_thumb">
+  
+  <% end %>
+  .
+</div><!-- /video_container -->
+<div class = "clear-right">.</div>
+<%#= will_paginate @videos, :class => "pagination page-wide" %>
+
+<br />
+

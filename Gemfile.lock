@@ -43,6 +43,8 @@ GEM
       activemodel (= 3.0.1)
       activesupport (= 3.0.1)
     activesupport (3.0.1)
+    acts_as_state_machine (2.2.0)
+      activerecord (>= 2.1)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     builder (2.1.2)
@@ -89,11 +91,13 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    will_paginate (2.3.15)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_state_machine
   authlogic!
   delayed_job!
   haml
@@ -103,3 +107,4 @@ DEPENDENCIES
   rails (= 3.0.1)
   rails3-generators
   themes_for_rails
+  will_paginate

@@ -5,6 +5,7 @@ themes_for_rails
   resources :users
   resource :user_session
   resources :activations
+  resources :videos
 
   resources :password_resets
 
