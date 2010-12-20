@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
- theme APP_THEME
+  theme APP_THEME
 
-def index
+  def index
     @videos = Video.find :all
   end
 
@@ -11,6 +11,7 @@ def index
 
   def create
     @video = Video.new(params[:video])
+    @video.user = current_user
     if @video.save
       @video.convert
       flash[:notice] = 'Video has been uploaded'
@@ -23,11 +24,6 @@ def index
   def show
     @video = Video.find(params[:id])
   end
-
-
-
-
-
 
 
 end

@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
 
   def show
     @user = current_user
-    #@videos = @user.videos
+    @videos = Video.find_all_by_user_id(current_user)
   end
 
 end

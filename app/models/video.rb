@@ -1,7 +1,18 @@
 class Video < ActiveRecord::Base
   # Paperclip
+before_create :save_thumbnail
+  belongs_to :thumbnail
+belongs_to :user
+has_many :replies, :class_name => 'VideoReply'
+
+
   # http://www.thoughtbot.com/projects/paperclip
-  has_attached_file :source
+  has_attached_file :source,
+   :url => "/assets/videos/:id/:style/:basename.:extension",
+   :path => ":rails_root/public/assets/videos/:id/:style/:basename.:extension"
+
+
+
 
 
   # Paperclip Validations
@@ -41,6 +52,12 @@ class Video < ActiveRecord::Base
     else
       self.failure!
     end
+  end
+def save_thumbnail
+logger.info "Saving thumbnail of Video..."
+t = Thumbnail.create!("/public/")
+self.thumbnail = t
+t
   end
 
   protected
