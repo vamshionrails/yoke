@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
@@ -7,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :is_admin?
   filter_parameter_logging :password, :password_confirmation
   before_filter :set_locale
+
 
   def set_locale
     # update session if passed
@@ -80,4 +82,12 @@ class ApplicationController < ActionController::Base
           redirect_to root_url
         end
       end
+
+
+
+def param_posted?(sym)
+    request.post? and params[sym]
+  end
+
+
 end

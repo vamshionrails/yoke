@@ -1,0 +1,29 @@
+<p>
+  The future home of <%= @user.id %>.
+</p>
+<%= render :partial    => "profile/field_row", 
+                   :collection => Profile::ALL_FIELDS %>
+
+
+<div id="main_content">
+  <div id="full_name">
+    <%= h @profile.full_name.or_else("Your Name") %>
+  </div>
+  <div id="occupation">
+    <%= h @profile.occupation.or_else("Your Occupation") %>
+  </div> 
+  <div id="location">
+    <%= h @profile.location.or_else("Your Location") %>
+  </div> 
+  <span class="edit_link">
+    <%= link_to "(edit)", :controller => "profile", :action => "edit" %>
+
+  </span>
+
+  <hr noshade />
+  Profile URL: <%= link_to profile_for(@user), profile_for(@user) %>
+  <hr noshade />
+
+  My Bio:
+
+</div>

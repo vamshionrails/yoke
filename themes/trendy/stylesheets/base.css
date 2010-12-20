@@ -602,3 +602,38 @@ button.button:hover, a.button:hover {
 button.button:active, a.button:active {
     background-color: #E5E5E5;
 }
+
+
+/* Profile Style */
+
+#full_name  {
+  font-size: xx-large;
+}
+
+#occupation{
+  font-size: x-large;
+}
+
+#location {
+  font-size:  large;
+}
+
+
+/* FAQ Style */
+
+.faq {
+  float: left;
+  padding: 20px;
+}
+
+#bio {
+  padding: 10px;
+}
+.sidebar_box_contents, .faq_answer {
+  padding:  0 10px 10px 10px;
+}
+
+.faq_answer textarea {
+  width:  280px;
+  background: #ff9;
+}

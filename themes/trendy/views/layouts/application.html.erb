@@ -20,7 +20,7 @@
       <div id="user-navigation">
         <ul class="wat-cf">
 	  <% if current_user %>
-          <li><%= link_to I18n.t('txt.welcome') %>
+          <li><%= link_to I18n.t('txt.welcome'), dashboard_path %>
           <li><%= link_to I18n.t('user.myaccount'), edit_user_path(current_user) %></li>
           <li><%= link_to I18n.t('user.logout'), logout_path %></li>
           <% else %>

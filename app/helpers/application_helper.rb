@@ -1,5 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+require 'string'
   def show_locale_files
     output = ''
     Dir["#{LOCALES_DIRECTORY}#{I18n.locale}.{rb,yml}"].sort.each do |locale_file|
@@ -20,6 +21,15 @@ module ApplicationHelper
   def sidebar(&block)
     content_for(:sidebar, content_tag(:div, capture(&block), :id => 'sideview'))
   end
+
+def text_field_for(form, field,
+                     size=HTML_TEXT_FIELD_SIZE,
+                     maxlength=DB_STRING_MAX_LENGTH)
+    label = content_tag("label", "#{field.humanize}:", :for => field)
+    form_field = form
+    content_tag("div", "#{label} #{form_field}", :class => "")
+  end
+
 
 end
 

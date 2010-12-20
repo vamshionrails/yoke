@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101217191106) do
+ActiveRecord::Schema.define(:version => 20101220204726) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(:version => 20101217191106) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id",                    :null => false
+    t.string   "first_name", :default => ""
+    t.string   "last_name",  :default => ""
+    t.string   "gender"
+    t.date     "birthdate"
+    t.string   "occupation", :default => ""
+    t.string   "city",       :default => ""
+    t.string   "state",      :default => ""
+    t.string   "zipcode",    :default => ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -91,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20101217191106) do
     t.datetime "updated_at"
     t.integer  "thumbnail_id"
     t.integer  "user_id"
+    t.string   "uploaded_data"
   end
 
 end

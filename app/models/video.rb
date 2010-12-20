@@ -5,22 +5,14 @@ before_create :save_thumbnail
 belongs_to :user
 has_many :replies, :class_name => 'VideoReply'
 
-
   # http://www.thoughtbot.com/projects/paperclip
   has_attached_file :source,
    :url => "/assets/videos/:id/:style/:basename.:extension",
    :path => ":rails_root/public/assets/videos/:id/:style/:basename.:extension"
 
-
-
-
-
   # Paperclip Validations
   validates_attachment_presence :source
  # validates_attachment_content_type :source, :content_type => 'application/x-flash-video'
-
-
-
 
 
   # Acts as State Machine
