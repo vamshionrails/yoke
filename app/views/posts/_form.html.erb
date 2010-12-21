@@ -1,0 +1,12 @@
+<%= error_messages_for :post %>
+
+<%#= text_field "form", "title", 60 %>
+<div class="form_row">
+
+  <label for="title">Title</label>
+  <%= form.text_field :title %>
+<br>
+
+  <label for="body">Body:</label>
+  <%= form.text_area :body, :rows => 20, :cols => 60 %>
+</div>

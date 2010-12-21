@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   #has_one :profile, :dependent => :destroy
 
   has_one :profile
+  has_one :blog
 
   has_many :user_roles, :dependent => :destroy
   has_many :roles, :through => :user_roles

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101220204726) do
+ActiveRecord::Schema.define(:version => 20101221184351) do
+
+  create_table "blogs", :force => true do |t|
+    t.integer "user_id"
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -26,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20101220204726) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "posts", :force => true do |t|
+    t.integer  "blog_id"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id",                    :null => false
@@ -105,7 +117,6 @@ ActiveRecord::Schema.define(:version => 20101220204726) do
     t.datetime "updated_at"
     t.integer  "thumbnail_id"
     t.integer  "user_id"
-    t.string   "uploaded_data"
   end
 
 end

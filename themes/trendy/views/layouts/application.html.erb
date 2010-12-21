@@ -1,86 +1,71 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Web App Theme</title>
-  <link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
-  <link rel="stylesheet" id="current-theme" href="stylesheets/themes/default/style.css" type="text/css" media="screen" />
- <%= stylesheet_link_tag current_theme_stylesheet_path('style') %>
-   <%= stylesheet_link_tag current_theme_stylesheet_path('base') %>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Yoke::Balanced Social Networking</title>
+    <link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
+    <link rel="stylesheet" id="current-theme" href="stylesheets/themes/default/style.css" type="text/css" media="screen" />
+    <%= stylesheet_link_tag current_theme_stylesheet_path('style') %>
+    <%= stylesheet_link_tag current_theme_stylesheet_path('base') %>
     <%= javascript_include_tag current_theme_javascript_path('flowplayer') %>
-     <%= javascript_include_tag current_theme_javascript_path('jquery') %>
-  
- </head>
-<body>
-  <div id="container">
-    <div id="header">
-      <h1><a href="/">Yoke::<%= I18n.t('txt.quote')%></a></h1>
-      <div id="user-navigation">
-        <ul class="wat-cf">
-	  <% if current_user %>
-          <li><%= link_to I18n.t('txt.welcome'), dashboard_path %>
-          <li><%= link_to I18n.t('user.myaccount'), edit_user_path(current_user) %></li>
-          <li><%= link_to I18n.t('user.logout'), logout_path %></li>
-          <% else %>
-	  <li>
-	    <% form_tag '' do %>
-	    <%= select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'}) %>
-	    <% end %>
-	  </li>
-
-	  <li><%= link_to I18n.t('user.login'), login_path %></li>
-	  <li><%= link_to I18n.t('user.signup'), signup_path %></li>
-          <%end %>
-
-	  
-        </ul>
-      </div>
-      <div id="main-navigation">
-        <ul class="wat-cf">
-         
-        </ul>
-      </div>
-    </div>
-    <div id="wrapper" class="wat-cf">
-      <div id="main">
-        <div class="block" id="block-text">
-          
-          <div class="content">
-            <div class="inner">
-              <p class="first">
-               <%= yield %>
-              </p>
+    <%= javascript_include_tag current_theme_javascript_path('jquery') %>
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+	<h1> 
+	  <a href="/"><%= I18n.t('txt.quote')%></a></h1>
+	<div id="user-navigation">
+          <ul class="wat-cf">
+	    <% if current_user %>
+            <li><%= link_to I18n.t('txt.welcome'), dashboard_path %>
+            <li><%= link_to I18n.t('user.myaccount'), edit_user_path(current_user) %></li>
+            <li><%= link_to I18n.t('user.logout'), logout_path %></li>
+            <% else %>
+	    <li>
+	      <% form_tag '' do %>
+	      <%= select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), 
+		  { :index => nil, :onchange => 'this.form.submit()'}) %>
+	      <% end %>
+	    </li>
+	    <li><%= link_to I18n.t('user.login'), login_path %></li>
+	    <li><%= link_to I18n.t('user.signup'), signup_path %></li>
+            <%end %>
+            </ul>
+	  </div>
+	  <div id="main-navigation">
+            <ul class="wat-cf">
+            </ul>
+	  </div>
+	</div>
+	<div id="wrapper" class="wat-cf">
+	  <div id="main">
+            <div class="block" id="block-text">
+              <div class="content">
+		<div class="inner">
+		  <p class="first">
+		    <%= yield %>
+		  </p>
+		</div>
+              </div>
+            </div>
+            <div id="footer">
+              <div class="block">
+		<p><%= I18n.t('txt.copyright')%></p>
+              </div>
+            </div>
+	  </div>
+	  <div id="sidebar">
+            <div class="block notice">
+              <h4>Notice Title</h4>
+              <p>Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac aliquam blandit, lectus eros hendrerit eros, at eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. Aenean tempor venenatis dolor.</p>
             </div>
           </div>
-        </div>
-
-    
-             
-        <div id="footer">
-          <div class="block">
-
-           <p><%= I18n.t('txt.copyright')%></p>
-          </div>
-        </div>
-      </div>
-      <div id="sidebar">
-        
-       
-        <div class="block notice">
-          <h4>Notice Title</h4>
-          <p>Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac aliquam blandit, lectus eros hendrerit eros, at eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. Aenean tempor venenatis dolor.</p>
-        </div>
-        
+	</div>
       </div>
     </div>
-   
-
-      
-    </div>
-  </div>
-</body>
+  </body>
 </html>
 
 

@@ -9,7 +9,7 @@
 	<%= tab.dashboard 'Profile', profile_for(@user)%>
 	<%= tab.videos 'Videos', videos_path %>
 	<%= tab.radio 'Radio Station', '' %>
-	<%= tab.radio 'Blog', '' %>
+	<%= tab.radio 'Blog', posts_path %>
 	<%= tab.radio 'Settings', '' %>
 	<% end %>
       </li>
@@ -21,6 +21,11 @@
     <div class="inner">
       <div class="actions-bar wat-cf">
         <div class="actions">
+	  Blog: 
+	  <span class="edit_link">
+	    <%= link_to "(manage)", posts_path(@blog) %>
+	  </span>
+
         </div>
         <div class="pagination">
         </div>

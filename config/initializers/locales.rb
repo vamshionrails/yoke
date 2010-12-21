@@ -1,0 +1,8 @@
+DEFAULT_LANGUAGE_BY_DOMAIN = []
+DEFAULT_LANGUAGE_BY_DOMAIN << ["com", "english"]
+DEFAULT_LANGUAGE_BY_DOMAIN << ["uk", "english"]
+DEFAULT_LANGUAGE_BY_DOMAIN << ["ja", "japanese"]
+DEFAULT_LANGUAGE_BY_DOMAIN << ["fr", "french"]
+DEFAULT_LANGUAGE_BY_DOMAIN << ["it", "italian"]
+DEFAULT_LANGUAGE_BY_DOMAIN << ["es", "Spanish"]
+
