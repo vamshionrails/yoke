@@ -22,4 +22,4 @@ Paperclip.interpolates :extension do |attachment, style_name|
 end
 
 # Path to ffmpeg
-Paperclip.options[:command_path] = "/usr/local/bin/ffmpeg"
+Paperclip.options[:command_path] = "/usr/bin/ffmpeg"

@@ -4,12 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Yoke::Balanced Social Networking</title>
     <link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
-    <link rel="stylesheet" id="current-theme" href="stylesheets/themes/default/style.css" type="text/css" media="screen" />
+   
     <%= stylesheet_link_tag current_theme_stylesheet_path('style') %>
     <%= stylesheet_link_tag current_theme_stylesheet_path('base') %>
     <%= javascript_include_tag current_theme_javascript_path('flowplayer') %>
     <%= javascript_include_tag current_theme_javascript_path('jquery') %>
-    
+    <%= javascript_include_tag current_theme_javascript_path('swfobject') %>
+   
   </head>
   <body>
     <div id="container">
@@ -19,19 +20,26 @@
 	<div id="user-navigation">
           <ul class="wat-cf">
 	    <% if current_user %>
-            <li><%= link_to I18n.t('txt.welcome'), dashboard_path %>
+	    
+            <li><%= link_to I18n.t('txt.welcome'), dashboard_path %>  
+              <%= "[#{current_user.login.capitalize}]" %></li>
             <li><%= link_to I18n.t('user.myaccount'), edit_user_path(current_user) %></li>
             <li><%= link_to I18n.t('user.logout'), logout_path %></li>
+	    
             <% else %>
 	    <li>
 	      <% form_tag '' do %>
 	      <%= select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), 
-		  { :index => nil, :onchange => 'this.form.submit()'}) %>
+		  { :index => nil, :onchange => 'this.form.submit()', :class => "styled"}) %>
 	      <% end %>
 	    </li>
 	    <li><%= link_to I18n.t('user.login'), login_path %></li>
 	    <li><%= link_to I18n.t('user.signup'), signup_path %></li>
             <%end %>
+	    <% if current_user && is_admin? %>
+	        <li><%= link_to I18n.t('txt.admin'), admin_index_path %></li>
+	    <%end %>
+	   
             </ul>
 	  </div>
 	  <div id="main-navigation">
@@ -58,8 +66,9 @@
 	  </div>
 	  <div id="sidebar">
             <div class="block notice">
-              <h4>Notice Title</h4>
-              <p>Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac aliquam blandit, lectus eros hendrerit eros, at eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. Aenean tempor venenatis dolor.</p>
+	   
+	      <%= yield :sidebar %>
+
             </div>
           </div>
 	</div>

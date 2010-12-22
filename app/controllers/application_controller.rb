@@ -8,28 +8,29 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   def set_locale
-    # logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-    # I18n.locale = extract_locale_from_accept_language_header
-    # logger.debug "* Locale set to '#{I18n.locale}'"
-    # session[:locale] = params[:locale] if params[:locale]
-    # I18n.locale = session[:locale] || I18n.default_locale
-    # I18n.translate('activerecord.errors.messages')
+     logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
+     I18n.locale = extract_locale_from_accept_language_header
+     logger.debug "* Locale set to '#{I18n.locale}'"
+     session[:locale] = params[:locale] if params[:locale]
+     I18n.locale = session[:locale] || I18n.default_locale
+     I18n.translate('activerecord.errors.messages')
 
-    I18n.default_locale = 'English'
-    this_domain_lang = request.host.split('.').last
-    if this_domain_lang then
-      logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-      I18n.locale = extract_locale_from_accept_language_header
-      I18n.locale = this_domain_lang[1]
-    end
+   # I18n.default_locale = 'English'
+   # this_domain_lang = request.host.split('.').last
 
-    if params[:locale] then
-      logger.debug "* Locale set to '#{I18n.locale}'"
-      I18n.locale = params[:locale] if params[:locale]
-      session[:locale] = params[:locale] if params[:locale]
-      I18n.locale = session[:locale] || I18n.default_locale
-      I18n.translate('activerecord.errors.messages')
-    end
+    #if this_domain_lang then
+    #  logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
+    #  I18n.locale = extract_locale_from_accept_language_header
+    #  I18n.locale = this_domain_lang[1]
+    #end
+
+    #if params[:locale] then
+    #  logger.debug "* Locale set to '#{I18n.locale}'"
+    #  I18n.locale = params[:locale] if params[:locale]
+    #  session[:locale] = params[:locale] if params[:locale]
+    #  I18n.locale = session[:locale] || I18n.default_locale
+    #  I18n.translate('activerecord.errors.messages')
+    #end
   end
 
   def make_profile_vars

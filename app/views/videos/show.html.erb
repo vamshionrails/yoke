@@ -6,12 +6,22 @@
   <% if @video.state == "converted" %>
   <p id = "public">
     <a  
-       href="<%= @video.source %>"  
+       href="<%= @video.source.url %>"  
        style="display:block;width:720px;height:350px"  
        id="player"> 
     </a> 
     
     <!-- this will install flowplayer inside previous A- tag. -->
+
+<script type="text/javascript">
+  var so = new SWFObject('/flowplayer/mediaplayer.swf', 'mpl', '480', '360', '8');
+  so.addParam('allowscriptaccess', 'always');
+  so.addParam('allowfullscreen', 'true');
+  so.addVariable('height', '360');
+  so.addVariable('width', '480');
+  so.addVariable('file', '<%= @video.source.url %>');
+  so.write('player');
+</script>
     <script>
       flowplayer("player", "/flowplayer/flowplayer-3.0.3.swf");
     </script>

@@ -3,9 +3,18 @@
     welcome: "Welcome"
     quote: "Balancing Social Network...."
     copyright: "Copyright © 2010. Yoke.com."
+    admin: "Admin"
   user:
     login: "Login"
-    logout: "logout"
+    logout: "Logout"
     signup: "Sign Up"
     password: "Password"
     myaccount: "My Account"
+    authentication: "Authentication"
+    tip: "Tip"
+    access: "Please do register or login to access dashboard"
+    signupna: "Signup for a new account"
+    signuptip: "Signing up is easy. Give us a login name and an email address. We'll send you a confirmation email. You'll click the link in the email which will bring you back here where you'll complete your signup. This whole process should only take about a minute, but if you need help, don't hesitate to let us know!"
+    tiptext: "Use the same login name you use for Twitter. It'll make it easier for people to get in contact with you!"
+   
+     

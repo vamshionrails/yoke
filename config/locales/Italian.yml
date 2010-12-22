@@ -3,10 +3,18 @@
     welcome: "Benvenuto"
     quote: "Bilanciamento social network ...."
     copyright: "Copyright © 2010. Yoke.com."
+    admin: "Admin"
   user:
     login: "Login"
-    logout: "logout"
+    logout: "Logout"
     signup: "Registrati su"
     password: "Password"
     myaccount: "Il mio account"
+    tip: "Punta"
+    authentication: "Fíordheimhniú"
+    access: "Si prega di registrarsi o autenticarsi per accedere a dashboard"
+    signupna: "Registrati su un nuovo account"
+    signuptip: "Iscriversi è facile. Dateci un nome di login e un indirizzo e-mail. Ti invieremo un'email di conferma. Potrai fare clic sul link nella mail che vi porterà di nuovo qui dove potrai completare la registrazione. L'intero processo dovrebbe richiedere circa un minuto, ma se hai bisogno di aiuto, non esitate a farcelo sapere!"
+    tiptext: "Utilizzare lo stesso nome di login per usare Twitter. Sarà più facile per le persone a mettersi in contatto con voi!"
+
     

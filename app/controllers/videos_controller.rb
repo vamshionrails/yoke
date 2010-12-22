@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   theme APP_THEME
+before_filter :require_user
 
   def index
     @videos = Video.find :all

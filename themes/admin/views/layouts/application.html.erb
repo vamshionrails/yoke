@@ -25,12 +25,15 @@
 	  <li><%= link_to "Login", login_path %></li>
 	  <li><%= link_to "Sign Up", signup_path %></li>
           <%end %>
+	  <% if current_user && is_admin? %>
+	        <li><%= link_to I18n.t('txt.admin'), admin_index_path %></li>
+	    <%end %>
 
 	  
         </ul>
       </div>
       <div id="main-navigation">
-        <ul class="wat-cf">
+        <ul class="wat-cf"
          
         </ul>
       </div>

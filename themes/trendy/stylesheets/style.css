@@ -757,7 +757,7 @@ ul.list li .item .avatar {
     -moz-background-origin: padding;
     -moz-background-size: auto auto;
     background-attachment: scroll;
-    background-color: #002134;
+    background-color: #404040;
     background-image: none;
     background-position: 0 0;
     background-repeat: repeat;
@@ -811,6 +811,14 @@ a.button, button.button, .pagination a, .pagination span {
     -moz-border-radius-topleft: 4px;
     -moz-border-radius-topright: 4px;
 }
+
+span.styled {
+    background-color: #404040;
+      border:1px solid blue;
+
+}
+
+
 
 
 

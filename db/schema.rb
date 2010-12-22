@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20101221184351) do
     t.string   "filename"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "temp_path",    :limit => 25
   end
 
   create_table "user_roles", :force => true do |t|

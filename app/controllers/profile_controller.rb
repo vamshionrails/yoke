@@ -11,7 +11,7 @@ class ProfileController < ApplicationController
     @user.profile ||= Profile.new
     @profile = @user.profile
 
-    if param_posted?(:spec)
+    if param_posted?(:profile)
       if @user.profile.update_attributes(params[:profile])
         flash[:notice] = "Changes saved."
         redirect_to :controller => "user", :action => "index"
