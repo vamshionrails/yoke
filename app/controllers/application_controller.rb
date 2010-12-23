@@ -33,6 +33,14 @@ class ApplicationController < ActionController::Base
     #end
   end
 
+def logged_in?
+    not session[:user_id].nil?
+  end
+
+  def logged_out?
+    not logged_in?
+  end
+
   def make_profile_vars
     @profile = @user.profile ||= Profile.new
     @blog = @user.blog ||= Blog.new

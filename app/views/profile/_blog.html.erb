@@ -1,17 +1,13 @@
-<div id="blog">
-  <p>  
-  <% if paginated? %>
-    <% first = @pages.current_page.first_item %>
-    <% last  = @pages.current_page.last_item %>
-    <% if first == last %>
-      Post <%= last %> of
-    <% else %>
-      Posts <%= first %>&ndash;<%= last %> of
-    <% end %>
-  <% end %>
-  <%= pluralize(@blog.posts.count, "blog post") %>
-  </p>
 
-  <%= render :partial => "posts/post", :collection => @posts %>
-  <%= "Pages: #{pagination_links(@pages)}" if paginated? %>
+<div id="blog">
+<p>
+Found <%= pluralize(@posts.total_entries, "blog post") %>.
+<% if @posts.paginated? %>
+Displaying <%= @posts.first_item %> to <%= @posts.last_item %>
+<% end %>
+<%= render :partial => "posts/post", :collection => @posts %>
+<div>
+<%= will_paginate(@posts) %>
+</div>
+</p>
 </div>

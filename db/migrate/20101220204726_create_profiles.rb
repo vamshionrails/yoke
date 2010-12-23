@@ -9,7 +9,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :occupation, :default => ""
       t.string :city, :default => ""
       t.string :state, :default => ""
-      t.string :zipcode, :default => ""
+      t.string :zip, :default => ""
+
       t.timestamps
     end
   end

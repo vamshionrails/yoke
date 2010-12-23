@@ -9,8 +9,10 @@ class User < ActiveRecord::Base
   # implement if necessary
   #has_one :profile, :dependent => :destroy
 
-  has_one :profile
+
+has_one :profile, :dependent => :nullify
   has_one :blog
+  has_many :videos
 
   has_many :user_roles, :dependent => :destroy
   has_many :roles, :through => :user_roles

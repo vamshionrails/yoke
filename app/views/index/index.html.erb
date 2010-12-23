@@ -1,0 +1,25 @@
+
+welcome
+
+
+
+<% content_for :sidebar do %>
+  
+<%
+profile ||= nil
+%>
+
+<% if profile %>
+  <h2>Featured Member</h2>
+  <%= icon profile, :small, :class => 'left' %>
+  <div><%= link_to h(profile.f), profile %></div>
+  <%= truncate_html sanitize(textilize(profile.name)), 360, link_to('more', profile_path(profile)) %>
+<% else %>
+ "No New Profiles "
+
+
+<% end %>
+
+
+
+<% end %>

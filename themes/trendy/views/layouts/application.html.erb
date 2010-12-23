@@ -4,13 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Yoke::Balanced Social Networking</title>
     <link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
-   
+    
     <%= stylesheet_link_tag current_theme_stylesheet_path('style') %>
     <%= stylesheet_link_tag current_theme_stylesheet_path('base') %>
     <%= javascript_include_tag current_theme_javascript_path('flowplayer') %>
     <%= javascript_include_tag current_theme_javascript_path('jquery') %>
     <%= javascript_include_tag current_theme_javascript_path('swfobject') %>
-   
+    
   </head>
   <body>
     <div id="container">
@@ -37,36 +37,46 @@
 	    <li><%= link_to I18n.t('user.signup'), signup_path %></li>
             <%end %>
 	    <% if current_user && is_admin? %>
-	        <li><%= link_to I18n.t('txt.admin'), admin_index_path %></li>
+	    <li><%= link_to I18n.t('txt.admin'), admin_index_path %></li>
 	    <%end %>
-	   
-            </ul>
-	  </div>
-	  <div id="main-navigation">
-            <ul class="wat-cf">
-            </ul>
-	  </div>
+	    
+          </ul>
 	</div>
-	<div id="wrapper" class="wat-cf">
-	  <div id="main">
-            <div class="block" id="block-text">
-              <div class="content">
-		<div class="inner">
-		  <p class="first">
-		    <%= yield %>
-		  </p>
-		</div>
-              </div>
+	<div id="main-navigation">
+          <ul class="wat-cf">
+          </ul>
+	</div>
+      </div>
+      <div id="wrapper" class="wat-cf">
+	<div id="main">
+          <div class="block" id="block-text">
+            <div class="content">
+	      <div class="inner">
+		<p class="first">
+		  <%= yield %>
+		</p>
+	      </div>
             </div>
-            <div id="footer">
-              <div class="block">
-		<p><%= I18n.t('txt.copyright')%></p>
+          </div>
+          <div id="footer">
+            <div class="block">
+
+	      
+	      <p><%= I18n.t('txt.copyright')%></p>
+	      <hr>
+
+
+
+
+
+
+
               </div>
             </div>
 	  </div>
 	  <div id="sidebar">
             <div class="block notice">
-	   
+	      
 	      <%= yield :sidebar %>
 
             </div>

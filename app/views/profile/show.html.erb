@@ -1,10 +1,47 @@
-<p>
-  The future home of <%= @user.id %>.
-</p>
-<%= render :partial    => "profile/field_row", 
+
+<h1>User Hub</h1>
+
+<div id="left_column">
+	<div class="sidebar_box">
+    <h2>
+      <span class="header">Basic User Info</span>
+      <span class="edit_link"><%= link_to "(edit)", :action => "edit" %></span>
+      <br clear="all" />
+    </h2>
+    <div class="sidebar_box_contents">
+      <table>
+        <tr>
+          <td class="label">Login name:</td>
+          <td><%= @user.login %></td>
+        </tr>
+        <tr>
+          <td class="label">Email:</td>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <td class="label">Password:</td>
+          <td>********</td>
+        </tr>
+      </table>  
+    </div>
+  </div>
+  <div>
+    <h2>
+      <span class="header">Profile</span>
+      <span class="edit_link">
+        <%= link_to "(edit)", :controller => "profile", :action => "edit" %>
+      </span>
+      <br clear="all" />
+    </h2>
+    <div class="sidebar_box_contents">
+      <table>
+        <%= render :partial    => "profile/field_row", 
                    :collection => Profile::ALL_FIELDS %>
-
-
+      </table> 
+    </div>
+  </div>
+  
+</div>
 <div id="main_content">
   <div id="full_name">
     <%= h @profile.full_name.or_else("Your Name") %>
@@ -17,19 +54,17 @@
   </div> 
   <span class="edit_link">
     <%= link_to "(edit)", :controller => "profile", :action => "edit" %>
-
   </span>
 
   <hr noshade />
-  Profile URL: <%= link_to profile_for(@user), profile_for(@user) %>
+  <%#= link_to profile_for(@user), profile_for(@user) %>
   <hr noshade />
-
-  My Bio:
-
+  
+  My Bio: 
+  <span class="edit_link">
+    
+  </span>
+  <div id="bio" class="faq_answer">
+   
+  </div>
 </div>
-
-<#% unless @blog.posts.empty? %>
-    <hr noshade />
-    Blog: <%#= render :partial => "blog" %>
-  <#% end %>
-

@@ -13,7 +13,6 @@ themes_for_rails
 
   resources :password_resets
 
-  #map.resource :profile
   resource :dashboard, :controller => "dashboard"
   match '/register/:activation_code', :to => 'activations#new' ,:as => "register"
   match '/activate/:id', :to => 'activations#create', :as => "activate"
@@ -21,9 +20,9 @@ themes_for_rails
   match '/login', :to => 'user_sessions#new', :as => "login"
   match '/logout', :to => 'user_sessions#destroy', :as => "logout"
   match '/myaccount/:id', :to =>'users#edit', :as => "myaccount"
-  match '/profile/:screen_name', :controller => 'profile', :action => 'show', :as => "profile"
-  match '/profile/edit/:screen_name', :controller => 'profile', :action => 'edit'
 
+  match '/profile/:login', :controller => 'profile', :action => 'show'
+  match '/profile/edit/:login', :controller => 'profile', :action => 'edit'
   namespace :admin do
     match '/index', :to => 'index#index', :as => "index"
     match '/index/jobs', :to => 'index#jobs', :as => "jobs"

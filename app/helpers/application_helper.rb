@@ -22,13 +22,18 @@ require 'string'
     content_for(:sidebar, content_tag(:div, capture(&block), :id => 'sideview'))
   end
 
+
+
 def text_field_for(form, field,
                      size=HTML_TEXT_FIELD_SIZE,
                      maxlength=DB_STRING_MAX_LENGTH)
     label = content_tag("label", "#{field.humanize}:", :for => field)
-    form_field = form
-    content_tag("div", "#{label} #{form_field}", :class => "")
+    form_field = form.text_field field, :size => size, :maxlength => maxlength
+   # content_tag("div", "#{label} #{form_field}", :class => "form_row")
   end
+
+
+
 
 
 end

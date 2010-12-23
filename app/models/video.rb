@@ -18,8 +18,9 @@ class Video < ActiveRecord::Base
   acts_as_state_machine :initial => :pending
   state :pending
   state :converting
-  state :converted, :enter => :set_new_filename
-  state :error
+  #state :converted, :enter => :set_new_filename
+  state :converted
+state :error
 
   event :convert do
     transitions :from => :pending, :to => :converting
@@ -34,11 +35,11 @@ class Video < ActiveRecord::Base
   end
 
   def save_thumbnail
-logger.info "Saving thumbnail of Video..."
-t = Thumbnail.create!("/public/")
-self.thumbnail = t
-t
-  end
+    logger.info "Saving thumbnail of Video..."
+    t = Thumbnail.create!("/public/")
+    self.thumbnail = t
+    t
+end
 
 
   # Conversion Methods
@@ -48,7 +49,7 @@ t
     if success && $?.exitstatus == 0
       self.converted!
     else
-      self.failure!
+      self.failed!
     end
   end
 

@@ -12,10 +12,7 @@
     </ul>
   </div>
 
-
-
-
- <div class="content">
+  <div class="content">
     <h2 class="title"></h2>
     <div class="inner">
       <div class="actions-bar wat-cf">
@@ -23,9 +20,9 @@
 	  Blog: 
 	  <span class="edit_link">
 
- <%= link_to 'Add a new post', new_post_path %> 
-  <%#= "| Pages: #{pagination_links(@pages)}" if paginated? %>
-<%= render :partial => "post", :collection => @posts %>
+	    <%= link_to 'Add a new post', new_post_path %> 
+	    <%#= "| Pages: #{pagination_links(@pages)}" if paginated? %>
+	    <%= render :partial => "post", :collection => @posts %>
 	  </span>
 
         </div>

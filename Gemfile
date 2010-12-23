@@ -14,3 +14,8 @@ gem 'paperclip'
 gem 'acts_as_state_machine'
 gem 'will_paginate'
 gem "tabs_on_rails"
+
+	gem 'rspec-rails'
+	gem 'autotest'
+	gem 'autotest-rails'
+

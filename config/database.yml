@@ -1,12 +1,12 @@
 login: &login
   adapter: mysql
   username: root
-  password: 
+  password: root
   host: localhost
 
 development:
   <<: *login
-  database: yoke_dev
+  database: trendy_dev
 
 test:
   <<: *login

@@ -1,51 +1,52 @@
 
 <div id="block-tables" class="block">
-          <div class="secondary-navigation">
-            <ul class="wat-cf">
-              <li class="first"><a href="#block-text">Videos</a></li>
-            </ul>
-          </div>
-          <div class="content">
-            <h2 class="title">Videos</h2>
-            <div class="inner">
-              <form class="form" action="#">
-                <table class="table">
-                  <tbody><tr>
-                    <th class="first"><input type="checkbox" class="checkbox toggle"></th>
-                    <th>ID</th>
-                    <th>Thumbnail</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th class="last">&nbsp;</th>
-                  </tr>
-<% for video in @videos do %>
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><a href="/dashboard">Dashboard</a></li>
+      <li class="first"><a href="#block-text">Videos</a></li>
+      <li class="first"><a href="/videos/new">Upload</a></li>
+       
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title">Videos</h2>
+    <div class="inner">
+     
+        <table class="table">
+          <tbody><tr>
+              <th class="first"><input type="checkbox" class="checkbox toggle"></th>
+              <th>ID</th>
+              <th>Thumbnail</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th class="last">&nbsp;</th>
+            </tr>
+	    <% for video in @videos do %>
 
-                  <tr class="odd">
-                    <td>
-		      <input type="checkbox" value="1" name="id" class="checkbox">
-		    </td>
-		    <td><%= video.id %></td>
-		    <td><%= video.thumbnail ? image_tag(video.thumbnail.filename) : "No Thumbnail Available" %> </td>
-		    <td><%= video.title %></td>
-		    <td><%= video.description %></td>
-		    <td class="last">
-<a href="<%= video_url(video) %>">show</a> | 
-<a href="<%= edit_video_url(video)%>">edit</a> | 
-<a href="#">destroy</a></td>
-                  </tr>
-                 <% end %>
-                </tbody></table>
-                <div class="actions-bar wat-cf">
-                  <div class="actions">
-                    <button type="submit" class="button">
-                      <img alt="Delete" src="images/icons/cross.png"> Delete
-                    </button>
-                  </div>
-                  <div class="pagination">
-                    <span class="disabled prev_page">« Previous</span><span class="current">1</span><a href="#" rel="next">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a><a href="#">11</a><a href="#" class="next_page" rel="next">Next »</a>
-                  </div>
-                </div>
-              </form>
-            </div>
+            <tr class="odd">
+              <td>
+		<input type="checkbox" value="1" name="id" class="checkbox">
+	      </td>
+	      <td><%= video.id %></td>
+	      <td><%= video.thumbnail ? image_tag(video.thumbnail.filename) : "No Thumbnail Available" %> </td>
+	      <td><%= video.title %></td>
+	      <td><%= video.description %></td>
+	      <td class="last">
+		<a href="<%= video_url(video) %>">show</a> | 
+		<a href="<%= edit_video_url(video)%>">edit</a> | 
+		<a href="#">destroy</a></td>
+            </tr>
+            <% end %>
+        </tbody></table>
+        <div class="actions-bar wat-cf">
+          <div class="actions">
+           
+            </button>
+          </div>
+          <div class="pagination">
           </div>
         </div>
+     
+    </div>
+  </div>
+</div>
